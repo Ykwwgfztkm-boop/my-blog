@@ -2,8 +2,11 @@
 const Database = require('better-sqlite3');
 const path = require('path');
 
-// 数据库文件存在 data 文件夹里
-const db = new Database(path.join(__dirname, 'data', 'blog.db'));
+// 数据库文件：本地存在 data/ 文件夹，云端存在 /data/（Fly.io 持久卷）
+const dbPath = process.env.FLY_APP_NAME
+  ? '/data/blog.db'
+  : path.join(__dirname, 'data', 'blog.db');
+const db = new Database(dbPath);
 
 // 启动时自动建表（如果没有的话）
 db.exec(`
