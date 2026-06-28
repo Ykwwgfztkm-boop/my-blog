@@ -12,6 +12,11 @@ app.use(express.json());
 // 2. 前端页面放在 public 文件夹，直接提供
 app.use(express.static(path.join(__dirname, 'public')));
 
+// 🏷️ 版本信息
+app.get('/api/version', (req, res) => {
+  res.json({ version: '0.1.0', name: '茗的博客' });
+});
+
 // ====== 文章 API ======
 
 // 📖 获取所有文章列表
