@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小茗的博客 · 全栈学习笔记</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- ===== 顶部导航 ===== -->
+  <header>
+    <h1>📝 小茗的博客</h1>
+    <p>全栈之路，从一行代码开始</p>
+    <button id="newArticleBtn">+ 写文章</button>
+  </header>
+
+  <!-- ===== 主内容区 ===== -->
+  <main>
+    <!-- 文章列表 -->
+    <section id="articleList">
+      <h2>📋 所有文章</h2>
+      <div id="articles"></div>
+    </section>
+
+    <!-- 文章详情 -->
+    <section id="articleDetail" style="display:none;">
+      <button id="backBtn">← 返回列表</button>
+      <div id="detailContent"></div>
+    </section>
+
+    <!-- 编辑器 -->
+    <section id="editor" style="display:none;">
+      <h2 id="editorTitle">写新文章</h2>
+      <input type="text" id="titleInput" placeholder="文章标题...">
+      <input type="text" id="tagsInput" placeholder="标签（用逗号分隔，比如：JavaScript, 学习笔记）">
+      <textarea id="contentInput" placeholder="写点什么..." rows="15"></textarea>
+      <div class="editor-buttons">
+        <button id="saveBtn">💾 保存</button>
+        <button id="cancelBtn" class="secondary">取消</button>
+      </div>
+      <input type="hidden" id="editId" value="">
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
